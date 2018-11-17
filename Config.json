@@ -1,0 +1,20 @@
+{
+	"path": "/root/24h-server-live-on-bilibili",
+	"musicapi": "https://api.yuncaioo.com/bililive/",
+	"freespace": "15360",
+	"gift": "0",
+	"rtmp": {
+		"url": "",
+		"code": "",
+		"bitrate": "192"
+	},
+	"danmu": {
+		"cookie": "",
+		"token": "",
+		"roomid": "4059464",
+		"size": "20"
+	},
+	"nightvideo": {
+		"use": "1"
+	}
+}
