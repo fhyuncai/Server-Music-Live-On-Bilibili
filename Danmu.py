@@ -162,11 +162,11 @@ class bilibiliClient():
                 print(GiftUser + ' 送出了 ' + str(GiftNum) + ' 个 ' + GiftName)
                 gift_count = 0
                 try:
-                    gift_count = numpy.load('users/'+GiftUser+'.npy')
+                    gift_count = numpy.load('resource/users/'+GiftUser+'.npy')
                 except:
                     gift_count = 0
                 try:
-                    os.remove('users/'+GiftUser+'.npy')
+                    os.remove('resource/users/'+GiftUser+'.npy')
                 except:
                     print('delete error')
                 print('获取'+GiftUser+'送过'+str(gift_count)+'个瓜子')
@@ -178,7 +178,7 @@ class bilibiliClient():
                         print('[log]gift match',i['name'],i['price'])
                 print(GiftUser+'瓜子数改为'+str(gift_count))
                 try:
-                    numpy.save('users/'+GiftUser+'.npy', gift_count)
+                    numpy.save('resource/users/'+GiftUser+'.npy', gift_count)
                 except:
                     print('create error')
                 service.PostDanmu.send_dm_long('感谢'+GiftUser+'送的'+str(GiftNum)+'个'+GiftName+'！')
