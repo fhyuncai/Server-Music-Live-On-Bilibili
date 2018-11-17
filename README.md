@@ -131,23 +131,23 @@ git clone https://github.com/fhyuncai/24h-server-live-on-bilibili.git
 配置项说明：
 ```Json
 {
-	"path": "/root/24h-server-live-on-bilibili", --->文件所在目录
-	"musicapi": "https://api.yuncaioo.com/bililive/", --->API地址
-	"freespace": "15360", --->允许下载和缓存文件夹占用空间大小，超过时自动按时间顺序删除音乐，单位：MiB
-	"gift": "0", --->设定是否使用投礼物才能点歌，0为关闭，1为开启
+	"path": "/root/24h-server-live-on-bilibili", //文件所在目录
+	"musicapi": "https://api.yuncaioo.com/bililive/", //API地址
+	"freespace": "15360", //允许下载和缓存文件夹占用空间大小，超过时自动按时间顺序删除音乐，单位：MiB
+	"gift": "0", //设定是否使用投礼物才能点歌，0为关闭，1为开启
 	"rtmp": {
-		"url": "", --->rtmp地址
-		"code": "", --->直播码
-		"bitrate": "192" --->推流码率，单位k
+		"url": "", //rtmp地址
+		"code": "", //直播码
+		"bitrate": "192" //推流码率，单位k
 	},
 	"danmu": {
-		"cookie": "", --->发送弹幕用的cookie
-		"token": "", --->发送弹幕用的csrf_token
-		"roomid": "4059464", --->直播间ID
-		"size": "20" --->每段弹幕的最大长度（20级以后可发30字）
+		"cookie": "", //发送弹幕用的cookie
+		"token": "", //发送弹幕用的csrf_token
+		"roomid": "4059464", //直播间ID
+		"size": "20" //每段弹幕的最大长度（20级以后可发30字）
 	},
 	"nightvideo": {
-		"use": "1" --->设定是否播放晚间专属视频，0为关闭，1为开启
+		"use": "1" //设定是否播放晚间专属视频，0为关闭，1为开启
 	}
 }
 ```
