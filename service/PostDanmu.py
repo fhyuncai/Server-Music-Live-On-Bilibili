@@ -95,13 +95,13 @@ def get_download_url(s, t, user, song = "nothing"):
 	try:
 		filename = str(time.mktime(datetime.datetime.now().timetuple()))	#获取时间戳，用来当作文件名
 		urllib.request.urlretrieve(urllib.request.urlopen(download_api_url + "?%s" % urllib.parse.urlencode({'id': s}),timeout=5).read().decode('utf-8'), path+'/resource/playlist/'+filename+'.mp3') #下载歌曲 "http://music.163.com/song/media/outer/url?id="+str(s)+".mp3"
-		
+		print('[log]downloaded:ID'+str(s))
 		lyric = urllib.request.urlopen(download_api_url + "?%s" % urllib.parse.urlencode({'lyric': s}),timeout=5).read().decode('utf-8')  #设定获取歌词的网址
-
+		
 		tlyric = urllib.request.urlopen(download_api_url + "?%s" % urllib.parse.urlencode({'tlyric': s}),timeout=5).read().decode('utf-8')  #设定获取歌词的网址
-
+		print('[log]got lyric:ID'+str(s))
 		name = urllib.request.urlopen(download_api_url + "?%s" % urllib.parse.urlencode({'name': s}),timeout=5).read().decode('utf-8')  #设定获取歌词的网址
-
+		print('[log]got name:ID'+str(s))
 		if(song == "nothing"):  #当直接用id点歌时
 			service.AssMaker.make_ass(filename,'歌曲网易云ID：'+str(s)+'\\N歌曲名：'+str(name)+"\\N点播人："+user,path,lyric,tlyric)  #生成字幕
 			service.AssMaker.make_info(filename,'ID：'+str(s)+',名称：'+str(name)+",点播人："+user,path)	#生成介绍信息，用来查询

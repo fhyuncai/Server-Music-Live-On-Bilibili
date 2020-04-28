@@ -1,14 +1,14 @@
-# 24h-server-live-on-bilibili
+# Server-Music-Live-On-Bilibili
 
-B站直播音乐点播台
+B站直播音乐点播台-服务器版
 
-基于[https://github.com/chenxuuu/24h-raspberry-live-on-bilibili](https://github.com/chenxuuu/24h-raspberry-live-on-bilibili)修改
+基于 [https://github.com/chenxuuu/24h-raspberry-live-on-bilibili](https://github.com/chenxuuu/24h-raspberry-live-on-bilibili) 二次开发
 
-Demo:[https://live.bilibili.com/4059464](https://live.bilibili.com/4059464)
+Demo: [https://live.bilibili.com/4059464](https://live.bilibili.com/4059464)
 
 -------
 
-此版本的功能：
+### 此版本的功能
 
 - 弹幕点歌
 - 弹幕反馈（发送弹幕）
@@ -17,21 +17,31 @@ Demo:[https://live.bilibili.com/4059464](https://live.bilibili.com/4059464)
 - 切歌
 - 显示排队播放歌曲
 - 闲时随机播放预留歌曲
-- 播放音乐时背景图片随机选择
+- 播放音乐时随机显示背景图片
 - 已点播歌曲自动进入缓存，无人点播时随机播放
 - 存储空间达到设定值时，自动按点播时间顺序删除音乐来释放空间
 - 实时显示歌曲长度
 - 根据投喂礼物的多少来决定是否允许点播
 
-已知问题：
+### 与原版的区别
+
+- 文件结构不同
+- 配置文件为 json
+- 不能使用弹幕点MV
+- 没有视频推流功能
+- 不能获取实时cpu温度
+
+### 已知问题
 
 - 换歌、视频时会闪断
 
-## 安装说明：
+-------
 
-此版本仅在Ubuntu16.04测试通过，其它系统请自测
+## 安装说明
 
-## 安装依赖：
+此版本仅在 Ubuntu 16.04 测试通过，其它系统请自测
+
+## 安装依赖
 
 ```Bash
 sudo apt-get update
@@ -153,6 +163,7 @@ git clone https://github.com/fhyuncai/24h-server-live-on-bilibili.git
 ```
 
 请修改`Config.json`文件中的各种选项
+
 其中，`cookie`请尽量使用小号，在直播间，打开浏览器审查元素，先发一条弹幕，再查看`network`选项卡，找到`name`为`send`的项目，`Request head`中的`Cookie`即为`cookie`变量的值。注意设置后，账号不能点击网页上的“退出登陆”按键，换账号请直接清除当前Cookie再刷新
 
 `token`请填写`Request head`中的`csrf_token`
@@ -166,6 +177,7 @@ git clone https://github.com/fhyuncai/24h-server-live-on-bilibili.git
 `resource/img`文件夹内放入jpg格式的图片，用于做为放音乐时的背景，请尽量保证文件名全英文，分辨率推荐统一处理为1280x720
 
 所有配置完成后，开启直播，然后启动脚本即可：
+
 ```Bash
 sh start.sh
 ```
@@ -183,5 +195,3 @@ sh restart.sh
 ```
 
 如有出错的地方，请提交issue，也欢迎各位改进脚本并pr
-
-本程序协议为GPL
